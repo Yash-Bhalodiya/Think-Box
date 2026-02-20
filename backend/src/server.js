@@ -7,6 +7,9 @@ dotenv.config()
 
 const app = express()
 connectDB()
+
+//middlewear
+app.use(express.json()); // this middleware will parse JSON bodies: req.body
 app.use("/api/notes", noteroutes)
 
 

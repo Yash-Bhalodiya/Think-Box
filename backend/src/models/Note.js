@@ -5,13 +5,13 @@ import mongoose from "mongoose";
 
 const noteSchema = mongoose.Schema(
     {
-        title :{
-            typeof:String,
-            require:true
+        title:{
+            type:String,
+            required:true
         },
         content:{
-            typeof:String,
-            require:true
+            type:String,
+            required:true
         }
         
     },
