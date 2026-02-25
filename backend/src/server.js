@@ -6,14 +6,20 @@ dotenv.config()
 
 
 const app = express()
-connectDB()
+
 
 //middlewear
-app.use(express.json()); // this middleware will parse JSON bodies: req.body
+// app.use(express.json()); // this middleware will parse JSON bodies: req.body
+// app.use((req,res,next)=>{
+//     console.log("We just send a request");
+//     next();
+// })
 app.use("/api/notes", noteroutes)
 
-
-app.listen(5001,()=>{
-    console.log("Server is running at Port: 5001")
+connectDB().then(()=>{
+    app.listen(5001,()=>{
+        console.log("Server is running at Port: 5001")
+    })
 })
+
 
